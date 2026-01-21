@@ -34,7 +34,7 @@ export default function Home() {
       
       // CAMBIA ESTOS LINKS POR LOS TUYOS:
       githubUrl: "https://github.com/felipehiguerat/IAurlanalayzer",
-      demoUrl: "https://openai.com",
+      demoUrl: "https://i-aurlanalayzer.vercel.app/",
     },
   ];
 

@@ -29,6 +29,8 @@ export default function TerminalFooter() {
             <div className="pl-4 flex flex-col gap-2 text-slate-300 mt-3 border-l-2 border-slate-800">
                 <a 
                     href="https://github.com/felipehiguerat" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     className="hover:text-cyan-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-200"
                 >
                     <span className="text-slate-600">-rw-r--r--</span> 
@@ -36,13 +38,17 @@ export default function TerminalFooter() {
                 </a>
                 <a 
                     href="https://www.linkedin.com/in/felipe-higuera-tovar" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     className="hover:text-cyan-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-200"
                 >
                     <span className="text-slate-600">-rw-r--r--</span> 
                     www.linkedin.com/in/felipe-higuera-tovar
                 </a>
                 <a 
-                    href="mailto:felipehiguera27@gmail.com" 
+                    href="mailto:felipehiguera27@gmail.com"
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     className="hover:text-cyan-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-200"
                 >
                     <span className="text-slate-600">-rw-r--r--</span> 
