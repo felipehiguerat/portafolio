@@ -1,11 +1,13 @@
 import React from 'react';
 
-export default function GreetingBar({ companyName = "EMPRESA" }) {
+export default function GreetingBar({ 
+    companyName = "EMPRESA", 
+    prefix = "HOLA,", // Valor por defecto porsiacaso
+    content           // El texto largo
+}) {
     return (
-        // Agregamos la clase personalizada 'animate-slide-in'
         <div className="w-full max-w-4xl flex flex-col md:flex-row items-center justify-between gap-4 p-1 my-8 mx-auto px-4 z-20 relative animate-slide-in opacity-0">
             
-            {/* Definimos la animación aquí mismo para no tocar archivos globales */}
             <style>{`
                 @keyframes slideInLeft {
                     0% { opacity: 0; transform: translateX(-50px); }
@@ -13,7 +15,7 @@ export default function GreetingBar({ companyName = "EMPRESA" }) {
                 }
                 .animate-slide-in {
                     animation: slideInLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-                    animation-delay: 0.2s; /* Un pequeño retraso para que se vea elegante */
+                    animation-delay: 0.2s;
                 }
             `}</style>
 
@@ -21,17 +23,23 @@ export default function GreetingBar({ companyName = "EMPRESA" }) {
             <div className="bg-gradient-to-r from-cyan-950/40 to-slate-900/40 border-l-4 border-cyan-500 px-6 py-4 rounded-r-lg backdrop-blur-md w-full text-center md:text-left shadow-lg">
                 <p className="font-mono text-cyan-100 text-sm md:text-base tracking-wide leading-relaxed">
                     <span className="text-slate-400 mr-2">{'>'}</span>
-                    benvenida, <span className="text-cyan-400 font-bold bg-cyan-950/30 px-2 py-0.5 rounded border border-cyan-500/20">{companyName}</span>. 
                     
-                    {/* Texto descriptivo nuevo */}
+                    {/* PARTE 1: HOLA/HELLO */}
+                    {prefix} 
+                    
+                    {/* PARTE 2: EMPRESA (Con estilos) */}
+                    <span className="text-cyan-400 font-bold bg-cyan-950/30 px-2 py-0.5 rounded border border-cyan-500/20 mx-2">
+                        {companyName}
+                    </span>. 
+                    
+                    {/* PARTE 3: TEXTO LARGO (Traducido) */}
                     <span className="block mt-2 text-slate-300 text-xs md:text-sm font-sans normal-case opacity-90">
-                        Sabemos que el software soluciona inconvenientes y te facilita la vida. 
-                        Por ende, de acuerdo a lo que necesites, selecciona lo que se ajusta y te mostraré soluciones a tus problemas.
+                        {content}
                     </span>
                 </p>
             </div>
             
-            {/* Indicador de Estado del Sistema */}
+            {/* Indicador de Estado */}
             <div className="flex items-center gap-3 px-4 py-2 border border-green-900/50 bg-green-950/10 rounded-full shadow-[0_0_15px_rgba(20,83,45,0.2)] shrink-0">
                 <div className="relative">
                     <div className="w-2 h-2 rounded-full bg-green-500"></div>
