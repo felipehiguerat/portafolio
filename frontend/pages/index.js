@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 import CyberButton from '../components/CyberButton';
@@ -37,6 +37,24 @@ export default function Home() {
       demoUrl: "https://i-aurlanalayzer.vercel.app/",
     },
   ];
+
+   useEffect(() => {
+    // Lista aquí las URLs de tus Backends en Render que necesitan despertar.
+    // OJO: Si tienes frontend en Vercel y backend en Render, pon aquí la URL DEL BACKEND de Render.
+    const targets = [
+      "https://sentel-dk26.onrender.com/api/v1/health", 
+      "https://iaurlanalayzer.onrender.com/api/v1/health"
+
+    ];
+
+    targets.forEach(url => {
+      // Usamos 'no-cors' para que el navegador no bloquee la solicitud por seguridad.
+      // No nos importa la respuesta, solo queremos que llegue la señal al servidor.
+      fetch(url, { mode: 'no-cors' })
+        .then(() => console.log(`📡 Señal de activación enviada a: ${url}`))
+        .catch(err => console.log(`⚠️ No se pudo contactar a ${url}`, err));
+    });
+  }, []); 
 
   // Lógica de filtrado
   const filteredProjects = projectsData.filter(project => {
