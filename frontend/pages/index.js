@@ -174,7 +174,7 @@ export default function Home() {
         {/* GREETING */}
         <GreetingBar 
             key={lang} 
-            companyName="GOOGLE" 
+            companyName="COMPANY" 
             prefix={t.greetingPrefix} 
             content={t.greetingBody} 
         />
